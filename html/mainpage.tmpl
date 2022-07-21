@@ -1,0 +1,95 @@
+{{define "mainpage"}}
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <link rel='stylesheet' href='/files/styles.css'>
+        <title>Orders</title>
+    </head>
+    <body>
+        <header>
+            <h1>Get orders info by uid</h1>
+        </header>
+        <main>
+            <div class='mainblock'>
+                <div class="enterdata">
+                    <form action="/" method="get">
+                    <div><input type="text" name="uid"></div>
+                    <div class="buttonS"><input type="submit" name="submit" value="Search"></div>
+                    </form>
+                </div>
+                {{if .Order_uid}}
+                <div class="info">
+                    <div class="infotable">
+                        <table>
+                            <caption><strong>ORDER INFO</strong></caption>
+                            <tr><th>Field</th><th>Value</th></tr>
+                            <tr><td class="firstcolumnt">Order uid:</td><td>{{.Order_uid}}</td></tr>
+                            <tr><td class="firstcolumnt">Track number:</td><td>{{.Track_number}}</td></tr>
+                            <tr><td class="firstcolumnt">Entry:</td><td>{{.Entry}}</td></tr>
+                            <tr><td class="firstcolumnt">Locale:</td><td>{{.Locale}}</td></tr>
+                            <tr><td class="firstcolumnt">Internal signature:</td><td>{{.Internal_signature}}</td></tr>
+                            <tr><td class="firstcolumnt">Customer id:</td><td>{{.Customer_id}}</td></tr>
+                            <tr><td class="firstcolumnt">Delivery service:</td><td>{{.Delivery_service}}</td></tr>
+                            <tr><td class="firstcolumnt">ShardKey:</td><td>{{.Shardkey}}</td></tr>
+                            <tr><td class="firstcolumnt">Sm id:</td><td>{{.Sm_id}}</td></tr>
+                            <tr><td class="firstcolumnt">Date created:</td><td>{{.Date_created}}</td></tr>
+                            <tr><td class="firstcolumnt">Oof shard:</td><td>{{.Oof_shard}}</td></tr>
+                        </table>
+                    </div>
+                    <div class="infotable">
+                         <table>
+                            <caption><strong>DELIVERY INFO</strong></caption>
+                            <tr><th>Field</th><th>Value</th></tr>
+                            <tr><td class="firstcolumnt">Name:</td><td>{{.Delivery.Name}}</td></tr>
+                            <tr><td class="firstcolumnt">Phone:</td><td>{{.Delivery.Phone}}</td></tr>
+                            <tr><td class="firstcolumnt">Zip:</td><td>{{.Delivery.Zip}}</td></tr>
+                            <tr><td class="firstcolumnt">City:</td><td>{{.Delivery.City}}</td></tr>
+                            <tr><td class="firstcolumnt">Address:</td><td>{{.Delivery.Address}}</td></tr>
+                            <tr><td class="firstcolumnt">Region:</td><td>{{.Delivery.Region}}</td></tr>
+                            <tr><td class="firstcolumnt">Email:</td><td>{{.Delivery.Email}}</td></tr>
+                        </table>
+                    </div>
+                    <div class="infotable">
+                         <table>
+                            <caption><strong>PAYMENT INFO</strong></caption>
+                            <tr><th>Field</th><th>Value</th></tr>
+                            <tr><td class="firstcolumnt">Transaction:</td><td>{{.Payment.Transaction}}</td></tr>
+                            <tr><td class="firstcolumnt">Request id:</td><td>{{.Payment.Request_id}}</td></tr>
+                            <tr><td class="firstcolumnt">Currency:</td><td>{{.Payment.Currency}}</td></tr>
+                            <tr><td class="firstcolumnt">Provider:</td><td>{{.Payment.Provider}}</td></tr>
+                            <tr><td class="firstcolumnt">Amount:</td><td>{{.Payment.Amount}}</td></tr>
+                            <tr><td class="firstcolumnt">Payment dt:</td><td>{{.Payment.Payment_dt}}</td></tr>
+                            <tr><td class="firstcolumnt">Bank:</td><td>{{.Payment.Bank}}</td></tr>
+                            <tr><td class="firstcolumnt">Delivery cost:</td><td>{{.Payment.Delivery_cost}}</td></tr>
+                            <tr><td class="firstcolumnt">Goods total:</td><td>{{.Payment.Goods_total}}</td></tr>
+                            <tr><td class="firstcolumnt">Custom fee:</td><td>{{.Payment.Custom_fee}}</td></tr>
+                        </table>
+                    </div>
+                    <div class="itemstext"><p><strong>ITEMS INFO</strong></p></div>
+                        {{range $Number, $Item := .Items}}
+                        <div class="infotable">
+                            <table>
+                            <caption><strong>ITEM#{{add $Number}}</strong></caption>
+                            <tr><th>Field</th><th>Value</th></tr>
+                            <tr><td class="firstcolumnt">Chrt id:</td><td>{{.Chrt_id}}</td></tr>
+                            <tr><td class="firstcolumnt">Track number::</td><td>{{.Track_number}}</td></tr>
+                            <tr><td class="firstcolumnt">Price:</td><td>{{.Price}}</td></tr>
+                            <tr><td class="firstcolumnt">Rid:</td><td>{{.Rid}}</td></tr>
+                            <tr><td class="firstcolumnt">Name:</td><td>{{.Name}}</td></tr>
+                            <tr><td class="firstcolumnt">Sale:</td><td>{{.Sale}}</td></tr>
+                            <tr><td class="firstcolumnt">Size:</td><td>{{.Size}}</td></tr>
+                            <tr><td class="firstcolumnt">Total price:</td><td>{{.Total_price}}</td></tr>
+                            <tr><td class="firstcolumnt">Nm id:</td><td>{{.Nm_id}}</td></tr>
+                            <tr><td class="firstcolumnt">Brand:</td><td>{{.Brand}}</td></tr>
+                            <tr><td class="firstcolumnt">Status:</td><td>{{.Status}}</td></tr>
+                        </table>
+                        </div>
+                        {{end}}
+                </div>
+                {{end}}
+            </div>
+        </main>
+    </body>
+</html>
+{{end}}

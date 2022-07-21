@@ -1,0 +1,61 @@
+body {
+	margin:0 auto;
+	width: 95%;
+}
+h1 {
+	border-bottom: solid black 1px;
+	text-align: center;
+}
+
+.enterdata {
+	margin: auto;
+	display: block;
+	align-items: center;
+	width: 177px;
+	padding: auto;
+}
+.buttonS {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	width: 58px;
+}
+
+.info {
+	margin: auto;
+	width: 1480px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+table {
+	width: 450px;
+	border: 2px solid grey;
+	border-collapse: collapse;
+	height: 350px;
+}
+
+td {
+	border: 1px solid grey;
+	padding: 5px;
+}
+
+.firstcolumnt {
+	font-weight: bold;
+	width: 200px;
+}
+
+.infotable {
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.itemstext {
+	width: 1480px;
+	text-align: center;
+	border-bottom: solid black 1px;
+	margin-bottom: 20px;
+}
